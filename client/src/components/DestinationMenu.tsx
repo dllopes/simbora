@@ -27,7 +27,6 @@ const destinations: Destination[] = [
     href: "/bonito",
     label: "Bonito",
     emoji: "🐠",
-    soon: true,
   },
 ];
 
