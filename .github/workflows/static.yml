@@ -37,14 +37,11 @@ jobs:
           node-version: 22
           cache: pnpm
 
-      - name: Enable corepack
-        run: corepack enable
-
       - name: Install dependencies
-        run: pnpm install
+        run: corepack pnpm install
 
       - name: Build site
-        run: pnpm run build
+        run: corepack pnpm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
