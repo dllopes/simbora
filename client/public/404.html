@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SIMBORA</title>
+    <script>
+      (function () {
+        try {
+          sessionStorage.setItem("simbora:redirect", window.location.href);
+        } catch (error) {
+          console.warn("Unable to persist redirect path:", error);
+        }
+
+        var path = window.location.pathname;
+        var base = path.slice(0, path.lastIndexOf("/") + 1);
+        var destination = base || "/";
+
+        if (!destination.endsWith("/")) {
+          destination += "/";
+        }
+
+        window.location.replace(destination);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
